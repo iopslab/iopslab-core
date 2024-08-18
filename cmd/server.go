@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/crawlab-team/crawlab-core/apps"
+	"github.com/crawlab-team/crawlab-core/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -15,6 +16,7 @@ var serverCmd = &cobra.Command{
 	Short:   "Start Crawlab server",
 	Long:    `Start Crawlab node server that can serve as API, task scheduler, task runner, etc.`,
 	Run: func(cmd *cobra.Command, args []string) {
+		utils.InitLogger()
 		// app
 		//svr := apps.GetServer(opts...)
 		svr := apps.GetServerV2()
